@@ -1,0 +1,19 @@
+It's 2023 and I thought I could show some love to SCO Unix by compiling gcc 2.7.2.2.
+In the end, it was fairly simple, and I provide the instructions that I used. However,
+YOU DON'T NEED TO RECOMPILE, since I left the binaries in.
+Save yourself some time and run
+	make install CC="stage2/xgcc -Bstage2/" CFLAGS="-g -O" LANGUAGES=c
+and you finally will have a gcc version that is hardly modern, but at least recognizes
+C++ comments.
+
+
+###################################################
+# Compiling from scratch gcc 2.7.2.2 distribution #
+###################################################
+gzip xfz gcc-2.7.2.2.tgz 
+cd gcc-2.7.2.2
+./configure
+make bootstrap LANGUAGES=c BOOT_CFLAGS="-g -O" CC=gcc
+make compare
+make install CC="stage2/xgcc -Bstage2/" CFLAGS="-g -O" LANGUAGES=c
+
