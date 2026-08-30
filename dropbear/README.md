@@ -48,12 +48,8 @@ Xenix's filesystem will truncate anything beyond 14 characters.
 ### Starting the server
 
 ```
-nohup /usr/bin/dropbear -F -p 2222 > /tmp/dropbear.log 2>&1 &
+/usr/bin/dropbear -R -p 2222 > /tmp/dropbear.log 2>&1
 ```
-
-- `-F`: stay in the foreground (needed since there's no real init/daemon-fork support tested
-  here; run it under `nohup &` or a supervising script instead)
-- `-p 2222`: listen port
 
 ## Connecting from a modern client
 
