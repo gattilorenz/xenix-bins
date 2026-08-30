@@ -48,7 +48,7 @@ Xenix's filesystem will truncate anything beyond 14 characters.
 ### Starting the server
 
 ```
-nohup /usr/bin/dropbear -F -p 2222 > /var/log/dropbear.log 2>&1 &
+nohup /usr/bin/dropbear -F -p 2222 > /tmp/dropbear.log 2>&1 &
 ```
 
 - `-F`: stay in the foreground (needed since there's no real init/daemon-fork support tested
